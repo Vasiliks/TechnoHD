@@ -1,10 +1,15 @@
-# coders by Vlamo 2012 (version: 0.2)
+# ProgressDiskSpaceInfo
+# Coded by Vlamo 2012
+# v0.4
+# 
+# 10.01.2020 code optimization mod by Sirius
+
 from Components.Converter.Converter import Converter
 from Components.Element import cached
 from Poll import Poll
 from os import popen, statvfs
 
-SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB", "EB"]
+SIZE_UNITS = [_("B"), _("KB"), _("MB"), _("GB"), _("TB"), _("PB"), _("EB")]
 
 
 class ProgressDiskSpaceInfo(Poll, Converter):
@@ -21,7 +26,7 @@ class ProgressDiskSpaceInfo(Poll, Converter):
 	def __init__(self, type):
 		Converter.__init__(self, type)
 		Poll.__init__(self)
-        
+
 		type = type.split(',')
 		self.shortFormat = "Short" in type
 		self.fullFormat  = "Full"  in type
@@ -43,7 +48,7 @@ class ProgressDiskSpaceInfo(Poll, Converter):
 			self.type = self.HDDINFO
 		else:
 			self.type = self.FLASHINFO
-		
+
 		if self.type in (self.FLASHINFO,self.HDDINFO,self.USBINFO):
 			self.poll_interval = 5000
 		else:
@@ -59,7 +64,7 @@ class ProgressDiskSpaceInfo(Poll, Converter):
 
 	@cached
 	def getText(self):
-		text = "N/A"
+		text = "n/a"
 		if self.type == self.HDDTEMP:
 			text = self.getHddTemp()
 		elif self.type == self.LOADAVG:
@@ -79,13 +84,17 @@ class ProgressDiskSpaceInfo(Poll, Converter):
 			else:
 				list = self.getMemInfo(entry[0])
 			if list[0] == 0:
-				text = "%s: Not Available"%(entry[1])
+				text = ("%s: " + _("Not defined"))%(entry[1])
+#				text = _("%s: Not Available")%(entry[1])
 			elif self.shortFormat:
-				text = "%s: %s, in use: %s%%" % (entry[1], self.getSizeStr(list[0]), list[3])
+				text = ("%s: " + _("Free") + ": %s") % (entry[1], self.getSizeStr(list[2]))
+#				text = _("%s:Free:%s") % (entry[1], self.getSizeStr(list[2]))
 			elif self.fullFormat:
-				text = "%s: %s Free:%s Used:%s (%s%%)" % (entry[1], self.getSizeStr(list[0]), self.getSizeStr(list[2]), self.getSizeStr(list[1]), list[3])
+				text = ("%s: %s " + _("Free") + ": %s " + _("Used") + ": %s (%s%%)") % (entry[1], self.getSizeStr(list[0]), self.getSizeStr(list[2]), self.getSizeStr(list[1]), list[3])
+#				text = _("%s: %s Free: %s Used: %s (%s%%)") % (entry[1], self.getSizeStr(list[0]), self.getSizeStr(list[2]), self.getSizeStr(list[1]), list[3])
 			else:
-				text = "%s: %s Used:%s Free:%s" % (entry[1], self.getSizeStr(list[0]), self.getSizeStr(list[1]), self.getSizeStr(list[2]))
+				text = ("%s: %s " + _("Used") + ": %s " + _("Free") + ": %s") % (entry[1], self.getSizeStr(list[0]), self.getSizeStr(list[1]), self.getSizeStr(list[2]))
+#				text = _("%s: %s Used: %s Free: %s") % (entry[1], self.getSizeStr(list[0]), self.getSizeStr(list[1]), self.getSizeStr(list[2]))
 		return text
 
 	@cached
@@ -191,4 +200,3 @@ class ProgressDiskSpaceInfo(Poll, Converter):
 		else:
 			self.downstream_elements.changed((self.CHANGED_POLL,))
 			self.poll_enabled = True
-	        
