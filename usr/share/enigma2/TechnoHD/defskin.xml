@@ -1754,15 +1754,36 @@
     <panel name="TemplatesButtons"/>
   </screen>
   <!--  Skin Selector  -->
-  <screen name="SkinSelector" position="fill" title="Choose your Skin" flags="wfNoBorder">
+  <screen name="SkinSelector" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Choose your Skin" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesTitle" />
+    <panel name="SkinSelectorOLd" />
+    <panel name="SkinSelectorNew" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <!--  Skin Selector old  -->
+  <screen name="SkinSelectorOld" position="fill" flags="wfNoBorder">
     <widget name="SkinList" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="Preview" position="890,440" size="280,210" zPosition="2" alphatest="on" />
     <widget source="introduction" render="Label" position="45,615" size="720,26" font="Regular; 18" foregroundColor="color1" backgroundColor="background" halign="center" transparent="1" />
-    <panel name="TemplatesMenu"/>
-    <panel name="TemplatesClock"/>
-    <panel name="TemplatesButtons"/>
+  </screen>
+  <!--  Skin Selector New  -->
+  <screen name="SkinSelectorNew">
+    <widget name="preview" position="260,100" size="280,210" alphatest="on" />
+    <widget source="skins" render="Listbox" position="50,320" size="710,280" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" >
+      <convert type="TemplatedMultiContent">
+            {"template": [
+                    MultiContentEntryText(pos = (10,0), size = (320,35), font = 0, flags = RT_HALIGN_LEFT, text = 1),
+                    MultiContentEntryText(pos = (380,0), size = (320,35), font = 1, flags = RT_HALIGN_RIGHT, text = 2)
+                ],
+             "fonts": [gFont("Regular", 20),gFont("Regular", 20)],
+             "itemHeight": 28
+            }
+      </convert>
+    </widget>
+    <widget source="description" render="Label" position="50,616" size="710,26" font="Regular; 20" halign="left" transparent="1" />
   </screen>
   <!-- InputDeviceSelection -->
   <screen name="InputDeviceSelection" position="fill" title="Select input device" flags="wfNoBorder">
@@ -2437,11 +2458,15 @@
     <ePixmap pixmap="TechnoHD/style/greydownload.png" position="0,0" size="1280,60" zPosition="-1" />
     <ePixmap pixmap="TechnoHD/download.png" position="center,36" size="1280,12" zPosition="1" />
     <widget name="activityslider" position="center,37" size="1280,10" pixmap="TechnoHD/down.png" zPosition="2" transparent="1" />
-    <widget source="package" render="Label" position="100,10" size="765,22" font="Display; 18" backgroundColor="background" halign="right" transparent="1" borderWidth="1" />
-    <widget source="status" render="Label" position="870,10" size="300,22" font="Display;18" backgroundColor="background" halign="left" transparent="1" borderWidth="1" />
+    <widget name="package" position="20,10" size="1240,22" font="Display; 18" backgroundColor="background" halign="right" transparent="1" borderWidth="1" />
+    <widget name="status" position="20,10" size="1240,22" font="Display;18" backgroundColor="background" halign="left" transparent="1" borderWidth="1" />
+  </screen>
+  <!-- OPKG -->
+  <screen name="Opkg" position="center,20" size="1280,60" title="Installing Software..." zPosition="1" flags="wfNoBorder">
+    <panel name="Ipkg" />
   </screen>
   <!-- IPKGMenu -->
-  <screen name="IPKGMenu" position="fill" title="Select IPKG source" flags="wfNoBorder">
+  <screen name="IPKGMenu" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/plugins.png" alphatest="blend" />
@@ -2450,8 +2475,12 @@
     <panel name="TemplatesClock"/>
     <panel name="TemplatesButtons"/>
   </screen>
+  <!-- OPKGMenu -->
+  <screen name="OPKGMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="IPKGMenu" />
+  </screen>
   <!-- IPKGSource -->
-  <screen name="IPKGSource" position="fill" title="IPKG source" flags="wfNoBorder">
+  <screen name="IPKGSource" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/plugins.png" alphatest="blend" />
@@ -2459,6 +2488,10 @@
     <panel name="TemplatesMenu"/>
     <panel name="TemplatesClock"/>
     <panel name="TemplatesButtons"/>
+  </screen>
+  <!-- OPKGSource -->
+  <screen name="OPKGSource" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="IPKGSource" />
   </screen>
   <!-- PacketManager -->
   <screen name="PacketManager" position="fill" title="IPKG upgrade" flags="wfNoBorder">
@@ -2487,11 +2520,15 @@
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
     <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/plugins.png" alphatest="blend" />
-    <widget name="list" position="50,95" size="710,498" transparent="1" />
+    <widget name="list" position="50,95" size="710,480" transparent="1" />
     <widget source="introduction" render="Label" position="45,615" zPosition="10" size="720,26" halign="center" valign="center" font="Regular; 18" transparent="1" foregroundColor="color1" backgroundColor="background" />
     <panel name="TemplatesMenu"/>
     <panel name="TemplatesClock"/>
     <panel name="TemplatesButtons"/>
+  </screen>
+  <!-- OpkgInstaller -->
+  <screen name="OpkgInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="IpkgInstaller" />
   </screen>
   <!-- BackupSelection -->
   <screen name="BackupSelection" position="fill" title="Select files/folders to backup" flags="wfNoBorder">
@@ -3367,15 +3404,15 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
   <!-- Numerical Text Input Help Dialog -->
   <screen name="NumericalTextInputHelpDialog" position="50,420" size="710,165" backgroundColor="black" zPosition="10" flags="wfNoBorder">
     <ePixmap position="1,0" zPosition="1" size="710,165" pixmap="TechnoHD/style/greysel.png" />
-    <widget name="key1" position="2,2" size="230,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key2" position="235,2" size="240,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key3" position="478,2" size="230,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key4" position="2,42" size="230,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key5" position="235,42" size="240,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key6" position="478,42" size="230,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key7" position="2,82" size="230,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key8" position="235,82" size="240,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
-    <widget name="key9" position="478,82" size="230,40" font="Display; 20" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key1" position="2,2" size="230,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key2" position="235,2" size="240,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key3" position="478,2" size="230,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key4" position="2,42" size="230,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key5" position="235,42" size="240,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key6" position="478,42" size="230,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key7" position="2,82" size="230,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key8" position="235,82" size="240,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
+    <widget name="key9" position="478,82" size="230,40" font="Display; 18" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
     <widget name="help1" position="2,123" size="137,40" font="Display; 38" valign="center" halign="center" foregroundColor="color1" backgroundColor="transparent" zPosition="2" />
     <widget name="key0" position="142,123" size="426,40" font="Display; 22" valign="center" halign="center" backgroundColor="transparent" zPosition="2" />
     <widget name="help2" position="571,123" size="137,40" font="Display; 38" valign="center" halign="center" foregroundColor="color1" backgroundColor="transparent" zPosition="2" />
@@ -3501,11 +3538,18 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <panel name="TemplatesButtons"/>
   </screen>
   <!--  VirtualKeyBoard  -->
-  <screen name="VirtualKeyBoard" position="80,150" size="560,350" zPosition="99" title="Virtual KeyBoard">
-    <ePixmap pixmap="TechnoHD/vkey_text.png" position="9,35" zPosition="-4" size="542,52" alphatest="on" />
-    <widget name="header" position="10,10" size="500,20" font="Regular;20" transparent="1" noWrap="1" />
-    <widget name="text" position="12,35" size="536,44" font="Regular;40" transparent="1" noWrap="1" halign="right" />
-    <widget name="list" position="10,100" size="540,225" selectionDisabled="1" transparent="1" />
+  <screen name="VirtualKeyBoard" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="TemplatesTitle" />
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
+    <widget name="prompt" position="55,105" size="700,50" font="Regular;22" transparent="1" noWrap="1" />
+    <ePixmap pixmap="TechnoHD/style/greysel.png" position="50,155" size="710,40" alphatest="on" />
+    <widget name="text" position="60,160" size="690,40" font="Regular;26" transparent="1" noWrap="1" zPosition="4" halign="right" valign="center" />
+    <widget name="list" position="85,290" size="670,225"  selectionDisabled="1" transparent="1" />
+    <widget name="locale" position="50,616" size="710,26" font="Regular; 20" halign="left" transparent="1" />
+    <widget name="mode" position="50,616" size="710,26" font="Regular; 20" halign="right" transparent="1" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+    <panel name="TemplatesMenu" />
   </screen>
   <!-- Video Finetune -->
   <screen name="VideoFinetune" position="fill" backgroundColor="background">
@@ -3580,7 +3624,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <panel name="TemplatesButtons" />
   </screen>
   <!-- ########## Hotkey ########## -->
-  <!-- OpenWebifConfig -->
+     <!-- HotkeySetup -->
   <screen name="HotkeySetup" position="fill" title="Input" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <panel name="TemplatesTitle"/>
@@ -3590,8 +3634,12 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <panel name="TemplatesClock" />
     <panel name="TemplatesButtons" />
   </screen>
+     <!-- HotkeySetupSelect -->
+  <screen name="HotkeySetupSelect" position="fill" title="Input" flags="wfNoBorder">
+    <panel name="HotkeySetup" />
+  </screen>
   <!-- ########## Remote Control Code ########## -->
-  <!-- OpenWebifConfig -->
+  <!-- RemoteControlCode -->
   <screen name="RemoteControlCode" position="fill" title="Remote Control System Code Setting" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <eLabel text="Remote Control System Code Setting" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
@@ -4909,8 +4957,8 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
     <panel name="TemplatesTitle"/>
     <widget name="title" position="50,95" size="710,26" font="Regular; 22" halign="center" foregroundColor="color1" transparent="1" zPosition="2" />
-    <widget name="starsbg" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_empty.png" alphatest="blend" zPosition="2" />
-    <widget name="stars" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_filled.png" transparent="1" zPosition="3" />
+    <widget name="starsbg" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/img/starsbar_empty.png" alphatest="blend" zPosition="2" />
+    <widget name="stars" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/img/starsbar_filled.png" transparent="1" zPosition="3" />
     <widget name="ratinglabel" position="900,560" size="230,24" font="Regular;20" halign="center" transparent="1" />
     <widget name="poster" position="50,125" size="185,278" alphatest="blend" transparent="1" />
     <widget name="menu" position="250,160" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" size="500,230" zPosition="2" transparent="1" />
@@ -4943,8 +4991,8 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
     <panel name="TemplatesTitle"/>
     <widget name="title" position="50,95" size="710,26" font="Regular; 22" halign="center" foregroundColor="color1" transparent="1" zPosition="2" />
-    <widget name="starsbg" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_empty.png" alphatest="blend" zPosition="2" />
-    <widget name="stars" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_filled.png" transparent="1" zPosition="3" />
+    <widget name="starsbg" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/img/starsbar_empty.png" alphatest="blend" zPosition="2" />
+    <widget name="stars" position="910,530" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/img/starsbar_filled.png" transparent="1" zPosition="3" />
     <widget name="ratinglabel" position="900,560" size="230,24" font="Regular;20" halign="center" transparent="1" />
     <widget name="poster" position="50,125" size="185,278" alphatest="blend" transparent="1" />
     <widget name="menu" position="50,160" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" size="710,410" zPosition="2" transparent="1" />
@@ -5349,5 +5397,272 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <ePixmap position="390,270" size="500,120" pixmap="TechnoHD/logo.png" alphatest="blend" />
     <ePixmap position="613,400" size="54,54" pixmap="TechnoHD/icons/input_info.png" alphatest="blend" />
     <widget name="text" position="0,460" size="1280,50" font="Regular;30" halign="center" valign="center" />
+  </screen>
+  <!-- ########## vZapHistory ########## -->
+  <!-- vZapHistory -->
+  <screen name="vZapHistory" position="fill" title="Zap History Browser" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <eLabel text="Zap History Browser" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <widget name="list" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" itemHeight="44" transparent="1" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock" />
+    <panel name="TemplatesButtons" />
+  </screen>
+  <!-- vZapHistoryConf -->
+  <screen name="vZapHistoryConf" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <widget name="config" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock" />
+    <panel name="TemplatesButtons" />
+  </screen>  
+  <!-- ########## EPG Import ########## -->
+  <!-- EPG Import Configuration -->
+  <screen name="EPGImportConfig" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <ePixmap pixmap="TechnoHD/style/greysel.png" position="50,530" size="710,100" zPosition="3" alphatest="on" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/information.png" alphatest="blend" />
+    <widget name="config" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" transparent="1" />
+    <widget name="status" position="70,540" size="700,50" font="Regular;22" halign="left" valign="center" backgroundColor="background" foregroundColor="color3" transparent="1" zPosition="4" />
+    <widget name="statusbar" position="70,590" size="700,25" font="Regular;22" halign="left" valign="center" backgroundColor="background" foregroundColor="color3" transparent="1" zPosition="4" />
+    <panel name="TemplatesMenu"/>
+    <panel name="TemplatesClock"/>
+    <panel name="TemplatesButtons"/>
+  </screen>
+    <!-- EPG Import Log -->
+  <screen name="EPGImportLog" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <widget name="list" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock" />
+    <panel name="TemplatesButtons" />
+  </screen>
+    <!-- EPG Import Sources -->
+  <screen name="EPGImportSources" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <widget name="list" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock" />
+    <panel name="TemplatesButtons" />
+  </screen>
+    <!-- EPG Import Profile -->
+  <screen name="EPGImportProfile" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <widget name="config" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock" />
+    <panel name="TemplatesButtons" />
+  </screen>
+    <!-- Filters Services Selection -->
+    <screen name="filtersServicesSelection" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <widget name="list" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock" />
+    <panel name="TemplatesButtons" />
+  </screen>
+    <!-- Filters Services Setup -->
+  <screen name="filtersServicesSetup" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
+    <panel name="TemplatesTitle"/>
+    <widget source="list" render="Listbox" position="50,95" size="710,540" scrollbarMode="showNever" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
+      <convert type="TemplatedMultiContent">
+        {"template": [
+            MultiContentEntryText(pos = (10, 5), size = (420, 23), font = 0, flags = RT_HALIGN_LEFT, text = 0),
+            MultiContentEntryText(pos = (50, 25), size = (380, 20), font = 1, flags = RT_HALIGN_LEFT, text = 1),
+            MultiContentEntryText(pos = (100, 47), size = (400, 17), font = 2, flags = RT_HALIGN_LEFT, text = 2),
+            ],
+            "fonts": [gFont("Regular", 21), gFont("Regular", 19), gFont("Regular", 16)],
+            "itemHeight": 65
+        }
+        </convert>
+    </widget>
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <!-- E2m3u2bouquet by Dorik1972 -->
+  <screen name="E2m3u2b_Providers_Config" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <ePixmap pixmap="TechnoHD/style/greysel.png" position="50,530" size="710,100" zPosition="3" alphatest="on" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="970,500" zPosition="1" size="100,200" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/E2m3u2bouquet/images/e2m3ubouquetlogo.png" alphatest="blend" />
+    <widget name="config" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" transparent="1" />
+    <widget source="description" render="Label" position="70,540" size="690,75" font="Regular;22" halign="left" valign="center" backgroundColor="background" foregroundColor="color3" transparent="1" zPosition="4" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock"/>
+    <panel name="TemplatesButtons"/>
+  </screen>
+  <screen name="E2m3u2b_About" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
+    <panel name="TemplatesTitle"/>
+    <widget name="about" position="50,95" size="710,528" font="Regular;22" halign="left" valign="top" backgroundColor="background" foregroundColor="color3" transparent="1"  />
+    <widget name="qrcode" position="830,135" size="400,400" zPosition="4" transparent="1" alphatest="blend"/>
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <screen name="E2m3u2b_Status" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="970,500" zPosition="1" size="100,200" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/E2m3u2bouquet/images/e2m3ubouquetlogo.png" alphatest="blend" />
+    <widget source="about" render="Label" position="50,95" size="710,528" font="Regular;22" halign="left" valign="top" backgroundColor="background" foregroundColor="color3" transparent="1"  />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <screen name="E2m3u2b_Update" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="970,500" zPosition="1" size="100,200" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/E2m3u2bouquet/images/e2m3ubouquetlogo.png" alphatest="blend" />
+    <widget source="about" render="Label" position="50,95" size="710,528" font="Regular;22" halign="left" valign="top" backgroundColor="background" foregroundColor="color3" transparent="1"  />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <screen name="E2m3u2b_Log" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="970,500" zPosition="1" size="100,200" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/E2m3u2bouquet/images/e2m3ubouquetlogo.png" alphatest="blend" />
+    <widget name="list" position="50,95" size="670,528" font="Regular;20" halign="left" valign="top" backgroundColor="background" foregroundColor="color3" transparent="1"  />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <screen name="E2m3u2b_Setup" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <ePixmap pixmap="TechnoHD/style/greysel.png" position="50,530" size="710,100" zPosition="3" alphatest="on" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="970,500" zPosition="1" size="100,200" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/E2m3u2bouquet/images/e2m3ubouquetlogo.png" alphatest="blend" />
+    <widget name="config" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" transparent="1" />
+    <widget source="description" render="Label" position="70,540" size="690,75" font="Regular;22" halign="left" valign="center" backgroundColor="background" foregroundColor="color3" transparent="1" zPosition="4" />
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesClock"/>
+    <panel name="TemplatesButtons"/>
+  </screen>
+  <screen name="E2m3u2b_Menu" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="970,500" zPosition="1" size="100,200" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/E2m3u2bouquet/images/e2m3ubouquetlogo.png" alphatest="blend" />
+    <widget source="list" render="Listbox" position="50,95" size="710,540" scrollbarMode="showNever" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
+        <convert type="TemplatedMultiContent">
+            {"template": [
+                MultiContentEntryPixmapAlphaTest(pos = (12, 4), size = (32, 32), png=0),
+                MultiContentEntryText(pos = (58, 5), size = (610, 40), font=0,  text = 1),
+                ],
+                "fonts": [gFont("Regular",22)],
+                "itemHeight": 40
+            }
+        </convert>
+    </widget>
+    <panel name="TemplatesMenu" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <screen name="E2m3u2b_Providers" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <panel name="TemplatesTitle"/>
+    <ePixmap position="970,500" zPosition="1" size="100,200" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/E2m3u2bouquet/images/e2m3ubouquetlogo.png" alphatest="blend" />
+    <widget source="list" render="Listbox" position="50,95" size="710,540" scrollbarMode="showNever" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" selectionDisabled="1" transparent="1">
+        <convert type="TemplatedMultiContent">
+            {"template": [
+                MultiContentEntryPixmapAlphaTest(pos = (12, 4), size = (32, 32), png = 0),
+                MultiContentEntryText(pos = (58, 5), size = (400, 40), font=0,  text = 1),
+                MultiContentEntryText(pos = (460, 0), size = (200, 40), font=0,  text = 2),
+                ],
+                "fonts": [gFont("Regular",22)],
+                "itemHeight": 40
+            }
+        </convert>
+    </widget>
+    <panel name="TemplatesMenu" />
+    <widget name="pleasewait" position="110,600" size="750,85" font="Display; 18" halign="left" valign="bottom" foregroundColor="color3" backgroundColor="background" transparent="1" />
+    <widget name="no_providers" position="110,630" size="750,85" font="Display; 18" halign="left" valign="bottom" foregroundColor="color3" backgroundColor="background" transparent="1" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <!-- ########## YouTube Player ########## -->
+  <!-- YouTube Main -->
+  <screen name="YouTubeMain" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
+    <ePixmap pixmap="TechnoHD/menu/mytube.png" position="920,440" zPosition="1" size="200,200" alphatest="blend" />
+    <panel name="TemplatesTitle"/>
+    <widget source="list" render="Listbox" position="50,95" size="710,540" scrollbarMode="showNever" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" selectionDisabled="1" transparent="1">
+      <convert type="TemplatedMultiContent">
+            {"template": [
+                MultiContentEntryPixmapAlphaTest(pos=(0,3), size=(100,72), png=2), # Thumbnail
+                MultiContentEntryText(pos=(110,1), size=(575,54), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=3), # Title
+                MultiContentEntryText(pos=(120, 54), size=(240,22), font=1, flags=RT_HALIGN_LEFT, text=4), # Views
+                MultiContentEntryText(pos=(420,54), size=(260,22), font=1, flags=RT_HALIGN_LEFT, text=5), # Duration
+                ],
+            "fonts": [gFont("Regular", 20),gFont("Console", 16)],
+            "itemHeight": 77}
+      </convert>
+    </widget>
+    <widget name="thumbnail" position="0,0" size="100,72" />
+    <ePixmap pixmap="TechnoHD/buttons/key_menu.png" position="800,615" size="35,25" zPosition="2" alphatest="blend" />
+    <panel name="TemplatesMenu"/>
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>  
+  <!-- YouTube Search -->
+  <screen name="YouTubeSearch" position="fill" flags="wfNoBorder">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
+    <ePixmap pixmap="TechnoHD/menu/mytube.png" position="920,440" zPosition="1" size="200,200" alphatest="blend" />
+    <panel name="TemplatesTitle"/>
+    <widget name="config" scrollbarMode="showNever" position="45,616" size="720,26" font="Regular;22" foregroundColor="color1" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" transparent="1" />
+    <widget source="list" render="Listbox" position="50,95" size="710,330" scrollbarMode="showNever" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" transparent="1">
+        <convert type="TemplatedMultiContent" >
+            {"template": [MultiContentEntryText(pos=(15,1), size=(640,45), font=0, flags=RT_HALIGN_LEFT, text=0)],
+                "fonts": [gFont("Regular",20)],
+                "itemHeight": 30}
+        </convert>
+    </widget>
+    <widget name="HelpWindow" position="50,425"  size="1,1" transparent="1" alphatest="on" />
+    <ePixmap pixmap="TechnoHD/buttons/key_menu.png" position="800,615" size="35,25" zPosition="2" alphatest="blend" />
+    <panel name="TemplatesMenu"/>
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <!-- YouTubeDownloadList -->
+  <screen name="YouTubeDownloadList" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
+    <ePixmap pixmap="TechnoHD/menu/mytube.png" position="920,440" zPosition="1" size="200,200" alphatest="blend" />
+    <panel name="TemplatesTitle"/>
+    <widget name="config" scrollbarMode="showNever"  position="45,616" size="720,26" font="Regular;22" foregroundColor="color1" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" transparent="1" />
+    <widget source="list" render="Listbox" position="50,95" size="710,330" scrollbarMode="showNever" scrollbarWidth="10" selectionPixmap="TechnoHD/style/greysel.png" transparent="1">
+  <convert type="TemplatedMultiContent">
+        {"template": [
+        MultiContentEntryText(pos=(10,1), size=(270,22), font=0, flags=RT_HALIGN_LEFT, text=1), # Title
+        MultiContentEntryText(pos=(280,1), size=(150,22), font=0, flags=RT_HALIGN_RIGHT, text=2), # State
+        MultiContentEntryProgress(pos=(440,4), size=(190,20), percent=-3), # Progress
+        MultiContentEntryText(pos=(640,1), size=(80,22), font=0, flags=RT_HALIGN_LEFT, text=4), # Percentage
+        ],
+        "fonts": [gFont("Regular",20)],
+        "itemHeight": 30}
+  </convert>
+  </widget>
+    <panel name="TemplatesMenu"/>
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
+  </screen>
+  <!-- YouTube Info -->
+  <screen name="YouTubeInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
+    <ePixmap pixmap="TechnoHD/menu/info.png" position="920,440" zPosition="1" size="200,200" alphatest="blend" />
+    <panel name="TemplatesTitle"/>
+    <widget name="pic" position="50,95" size="320,180" transparent="1" alphatest="on" />  
+    <widget name="description" position="390,95" size="365,540" font="Regular;16"  scrollbarMode="showNever"  scrollbarWidth="10" foregroundColor="white" backgroundColor="background" transparent="1" />
+    <widget name="published" position="55,285" size="300,20" font="Regular;16" foregroundColor="white" backgroundColor="background" transparent="1" />
+    <widget name="views" position="55,310" size="300,20" font="Regular;16" foregroundColor="white" backgroundColor="background" transparent="1" />
+    <widget name="duration" position="55,335" size="300,20" font="Regular;16" foregroundColor="white" backgroundColor="background" transparent="1" />
+    <widget name="likes" position="55,360" size="300,20" font="Regular;16" foregroundColor="white" backgroundColor="background" transparent="1" />
+    <widget name="dislikes" position="55,385" size="300,20" font="Regular;16" foregroundColor="white" backgroundColor="background" transparent="1" />
+    <panel name="TemplatesButtons" />
+    <panel name="TemplatesClock" />
   </screen>
 </skin>
