@@ -1166,7 +1166,7 @@
     <ePixmap position="0,508" size="1280,212" pixmap="TechnoHD/style/greyinfobar_5.png" zPosition="-1" alphatest="off" />
     <ePixmap position="1113,582" zPosition="10" size="100,60" pixmap="TechnoHD/picon_default.png" alphatest="blend" />
     <ePixmap position="68,582" zPosition="3" size="100,60" pixmap="TechnoHD/picon_video.png" alphatest="blend" />
-    <widget source="session.CurrentService" render="Label" position="280,572" size="720,30" font="Regular; 24" halign="center" zPosition="2" backgroundColor="background" transparent="1" foregroundColor="color2" borderWidth="1">
+    <widget source="session.CurrentService" render="Label" position="280,572" size="720,30" font="Regular; 24" halign="center" zPosition="2" backgroundColor="background" transparent="1" foregroundColor="color2" borderWidth="1" noWrap="1">
       <convert type="ServiceName">Name</convert>
     </widget>
     <widget source="session.CurrentService" render="Label" position="195,572" size="90,30" font="Regular;24" halign="left" zPosition="2" backgroundColor="background" transparent="1" foregroundColor="color2" borderWidth="1">
