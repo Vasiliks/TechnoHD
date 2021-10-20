@@ -1662,7 +1662,7 @@
   <!-- Language Selection -->
   <screen name="LanguageSelection" position="fill" title="Language selection" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Language selection" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="languages" render="Listbox" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1678,17 +1678,17 @@
     <panel name="TemplatesClock"/>
   </screen>
   <!--  About -->
-  <screen name="About" position="fill" title="About" flags="wfNoBorder">
+  <screen name="About" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <ePixmap position="775,450" zPosition="1" size="500,150" pixmap="TechnoHD/logo.png" alphatest="blend" />
-    <eLabel text="About" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="AboutScrollLabel" font="Regular;22" position="50,95" size="710,530" halign="center" zPosition="2" transparent="1" />
     <panel name="TemplatesMenu" />
     <panel name="TemplatesClock" />
     <panel name="TemplatesButtons" />
   </screen>
   <!--  Memory Info -->
-  <screen name="MemoryInfo" position="fill" title="Memory Info" flags="wfNoBorder">
+  <screen name="MemoryInfo" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <eLabel text="Memory Info" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
     <widget name="lmemtext" position="50,150" size="300,480" font="Regular;18" halign="left" backgroundColor="background" transparent="1" zPosition="1" />
@@ -1704,26 +1704,26 @@
     <panel name="TemplatesButtons" />
   </screen>
   <!--  Latest Commits -->
-  <screen name="CommitInfo" position="fill" title="Latest Commits" flags="wfNoBorder">
+  <screen name="CommitInfo" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Latest Commits" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="AboutScrollLabel" position="50,95" size="710,535" font="Console;20" backgroundColor="black" transparent="1" noWrap="1" />
     <panel name="TemplatesMenu" />
     <panel name="TemplatesClock" />
   </screen>
   <!--  Translation Info -->
-  <screen name="TranslationInfo" position="fill" title="Translation Info" flags="wfNoBorder">
+  <screen name="TranslationInfo" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Translation" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="TranslationInfo" render="Label" position="50,95" size="710,535" font="Console;20" backgroundColor="black" transparent="1" noWrap="1" />
     <panel name="TemplatesMenu" />
     <panel name="TemplatesClock" />
   </screen>
   <!-- Service Info -->
-  <screen name="ServiceInfo" position="fill" title="Serviceinfo" flags="wfNoBorder">
+  <screen name="ServiceInfo" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/information.png" alphatest="blend" />
-    <eLabel text="Service" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="infolist" position="50,95" size="710,533" selectionDisabled="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="red" position="56,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
     <widget name="green" position="355,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
@@ -1733,10 +1733,14 @@
     <panel name="TemplatesClock"/>
     <panel name="TemplatesButtons"/>
   </screen>
+  <!-- Service Info Simple -->
+    <screen name="ServiceInfoSimple" position="fill" flags="wfNoBorder">
+    <panel name="ServiceInfo" />
+  </screen>
   <!-- Setup -->
-  <screen name="Setup" position="fill" title="Setup" flags="wfNoBorder">
+  <screen name="Setup" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Setup" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,528" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="description" position="800,450" size="450,190" font="Regular; 22" halign="center" valign="top" foregroundColor="color3" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -1746,7 +1750,7 @@
   <!-- VideoSetup (VideoMode Plugin A/V Settings) -->
   <screen name="VideoSetup" position="fill" title="VideoSetup" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="VideoSetup" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,450" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="description" position="800,450" size="450,190" font="Regular; 22" halign="center" valign="top" foregroundColor="color3" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -1788,7 +1792,7 @@
   <!-- InputDeviceSelection -->
   <screen name="InputDeviceSelection" position="fill" title="Select input device" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Select input device" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="list" render="Listbox" position="50,95" size="710,280" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
         <!-- device, description, devicepng, divpng -->
@@ -1809,7 +1813,7 @@
   <!-- InputDeviceSetup -->
   <screen name="InputDeviceSetup" position="fill" title="Input device setup" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Input device setup" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,350" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="introduction" render="Label" position="45,615" size="720,26" font="Regular; 18" foregroundColor="color1" backgroundColor="background" halign="center" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -1820,7 +1824,7 @@
   <!--  EPG Selection -->
   <screen name="EPGSelection" position="fill" title="EPG Selection" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="EPG Selection" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="list" position="49,95" size="710,525" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="Service" render="Label" position="800,90" zPosition="2" size="440,30" font="Regular;24" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2">
       <convert type="ServiceName">Name</convert>
@@ -1843,7 +1847,7 @@
   <!-- EPG Selection Multi -->
   <screen name="EPGSelectionMulti" position="fill" title="EPG Selection Multi" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_8.png" />
-    <eLabel text="EPG Selection Multi" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="now_button_sel" pixmap="TechnoHD/epg_now.png" position="265,105" zPosition="3" size="750,40" alphatest="on" />
     <widget name="next_button_sel" pixmap="TechnoHD/epg_next.png" position="265,105" zPosition="3" size="750,40" alphatest="on" />
     <widget name="more_button_sel" pixmap="TechnoHD/epg_more.png" position="265,105" zPosition="3" size="750,40" alphatest="on" />
@@ -1857,7 +1861,7 @@
   <!--  Event View -->
   <screen name="EventView" position="fill" title="Eventview" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_8.png" />
-    <eLabel text="Eventview" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="channel" position="50,95" size="400,28" font="Regular;24" backgroundColor="background" transparent="1" />
     <widget name="datetime" position="center,95" size="400,28" font="Regular;24" halign="center" backgroundColor="background" transparent="1" />
     <widget name="duration" position="830,95" size="400,28" font="Regular;24" halign="right" backgroundColor="background" transparent="1" />
@@ -1868,7 +1872,7 @@
   <!-- Graph MultiEPG -->
   <screen name="GraphMultiEPG" position="fill" title="Electronic Program Guide" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Electronic Program Guide" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="timeline_text" position="50,95" size="710,28" foregroundColor="color1" backgroundColor="black" transparent="1" />
     <widget name="list" position="50,120" size="710,500" itemHeight="50" transparent="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" EntryBackgroundColor="background" EventFontPadding="4" />
     <widget name="timeline0" pixmap="TechnoHD/timeline.png" position="0,117" size="1,500" zPosition="1" />
@@ -1900,7 +1904,7 @@
   <!-- Graph MultiEPGList -->
   <screen name="GraphMultiEPGList" position="fill" title="Electronic Program Guide" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_8.png" />
-    <eLabel text="Electronic Program Guide" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="timeline_text" position="50,95" size="1180,28" foregroundColor="color1" backgroundColor="black" transparent="1" />
     <widget name="list" position="50,120" size="1180,500" itemHeight="50" transparent="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" EntryBackgroundColor="background" EventFontPadding="4" />
     <widget name="timeline0" pixmap="TechnoHD/timeline.png" position="0,117" size="1,500" zPosition="1" />
@@ -1916,7 +1920,7 @@
   <!-- GraphMultiEPGSetup -->
   <screen name="GraphMultiEpgSetup" position="fill" title="Electronic Program Guide Setup" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Electronic Program Guide Setup" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,340" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="canceltext" position="56,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
     <widget name="oktext" position="355,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
@@ -1927,7 +1931,7 @@
   <!-- GraphMultiEPGSetup -->
   <screen name="SelectBouquet" position="fill" title="Choose bouquet" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Choose bouquet" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="menu" position="50,95" size="710,530" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
     <panel name="TemplatesClock"/>
@@ -1935,7 +1939,7 @@
   <!-- Bouquet selector  -->
   <screen name="BouquetSelector" position="fill" title="Choose bouquet" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Choose bouquet" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="menu" position="50,95" size="710,530" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
     <panel name="TemplatesClock"/>
@@ -1943,7 +1947,7 @@
   <!-- TimeDateInput -->
   <screen name="TimeDateInput" position="fill" title="Time/Date Input" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Time/Date Input" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,340" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="canceltext" position="56,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
     <widget name="oktext" position="355,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
@@ -1955,7 +1959,7 @@
   <!-- Adapter Setup -->
   <screen name="AdapterSetup" position="fill" title="Network Setup" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Network Setup" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="Adaptertext" render="Label" position="45,95" size="140,28" zPosition="10" font="Regular;24" transparent="1" />
     <widget source="Adapter" render="Label" position="190,95" size="400,28" zPosition="10" font="Regular;24" transparent="1" />
     <widget name="config" position="50,150" size="710,375" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
@@ -1977,7 +1981,7 @@
   <!-- Adapter Setup Configuration -->
   <screen name="AdapterSetupConfiguration" position="fill" title="Network Configuration..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Network Configuration..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="menulist" position="50,95" size="710,375" scrollbarMode="showNever" itemHeight="38" font="Regular; 26" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="description" render="Label" position="800,450" size="450,190" font="Regular; 22" halign="center" valign="top" foregroundColor="color3" transparent="1" />
     <ePixmap position="1089,622" size="44,22" zPosition="1" pixmap="TechnoHD/icons/lan_off.png" alphatest="blend" />
@@ -2002,7 +2006,7 @@
   <!-- TextBox Nameserver Setup -->
   <screen name="NameserverSetup" position="fill" title="Nameserver Setup" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Nameserver Setup" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,450" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="introduction" render="Label" position="45,615" size="720,26" zPosition="1" font="Regular; 18" halign="center" transparent="1" foregroundColor="color1" />
     <panel name="TemplatesMenu"/>
@@ -2012,7 +2016,7 @@
   <!-- WlanStatus -->
   <screen name="WlanStatus" position="fill" title="Wireless Network State" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Wireless Network State" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="LabelBSSID" render="Label" position="50,95" size="300,28" valign="left" font="Regular; 22" transparent="1" foregroundColor="white" />
     <widget source="LabelESSID" render="Label" position="50,135" size="300,28" valign="center" font="Regular; 22" transparent="1" foregroundColor="white" />
     <widget source="LabelQuality" render="Label" position="50,175" size="300,28" valign="center" font="Regular; 22" transparent="1" foregroundColor="white" />
@@ -2049,7 +2053,7 @@
   <!-- WlanScan -->
   <screen name="WlanScan" position="fill" title="Choose a Wireless Network" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Choose a Wireless Network" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="list" render="Listbox" position="50,95" size="710,450" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
 					{"template": [
@@ -2073,7 +2077,7 @@
   <!-- Network Adapter Selection -->
   <screen name="NetworkAdapterSelection" position="fill" title="Select Network Adapter" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Select Network Adapter" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="list" render="Listbox" position="50,95" size="710,450" zPosition="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
         <!-- iface, name, description, interfacepng, defaultpng, activepng, divpng -->
@@ -2096,7 +2100,7 @@
   <!-- Network Adapter Test -->
   <screen name="NetworkAdapterTest" position="fill" title="Network test..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Network test..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="Adaptertext" position="50,120" size="650,25" zPosition="1" font="Regular;22" foregroundColor="grey" transparent="1" />
     <widget name="Adapter" position="50,150" size="650,25" zPosition="1" font="Regular;22" foregroundColors="#8c8c93,#f23d21,#1cff1c" transparent="1" />
     <widget name="AdapterInfo_OK" position="720,135" size="38,31" zPosition="2" pixmap="TechnoHD/icons/lock_on.png" alphatest="on" />
@@ -2137,7 +2141,7 @@
   <!-- Network Browser -->
   <screen name="NetworkBrowser" position="fill" title="Network Browser" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Network Browser" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="list" render="Listbox" position="50,95" size="710,420" zPosition="10" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
 		{"template": [
@@ -2161,7 +2165,7 @@
   <!-- AutoMountEdit -->
   <screen name="AutoMountEdit" position="fill" title="MountEdit" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="MountEdit" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" zPosition="1" size="710,400" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="introduction" render="Label" position="45,615" size="720,26" zPosition="1" font="Regular; 18" halign="center" foregroundColor="color1" transparent="1" />
     <widget name="VKeyIcon" pixmap="TechnoHD/menu/vkey_icon.png" position="1170,549" zPosition="10" size="60,48" transparent="1" alphatest="on" />
@@ -2173,7 +2177,7 @@
   <!-- AutoMount Manager -->
   <screen name="AutoMountManager" position="fill" title="MountManager" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="MountManager" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="config" render="Listbox" position="50,95" size="710,420" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
 		{"template": [
@@ -2194,7 +2198,7 @@
   <!-- AutoMountView -->
   <screen name="AutoMountView" position="fill" title="MountView" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="MountView" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="legend1" render="Label" position="50,95" zPosition="1" size="130,60" font="Regular;18" halign="center" valign="center" transparent="1" />
     <widget source="legend2" render="Label" position="180,95" zPosition="1" size="400,60" font="Regular;20" halign="center" valign="center" transparent="1" />
     <widget source="legend3" render="Label" position="580,95" zPosition="1" size="180,60" font="Regular;20" halign="center" valign="center" transparent="1" />
@@ -2221,7 +2225,7 @@
   <!-- ScanIP -->
   <screen name="ScanIP" position="fill" title="Scan IP" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Scan IP" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,25" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
     <panel name="TemplatesClock"/>
@@ -2230,7 +2234,7 @@
   <!-- User Dialog -->
   <screen name="UserDialog" position="fill" title="UserDialog" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="UserDialog" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" zPosition="1" size="710,400" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="introduction" render="Label" position="45,615" size="720,26" zPosition="1" font="Regular; 18" halign="center" foregroundColor="color1" transparent="1" />
     <widget name="VKeyIcon" pixmap="TechnoHD/menu/vkey_icon.png" position="1170,549" zPosition="10" size="60,48" transparent="1" alphatest="on" />
@@ -2242,7 +2246,7 @@
   <!-- UserManager -->
   <screen name="UserManager" position="fill" title="UserManager" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="UserManager" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="config" render="Listbox" position="50,95" size="710,420" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
 		{"template": [
@@ -2262,7 +2266,7 @@
   <!-- Wlan Selection -->
   <screen name="WlanSelection" position="fill" title="Wireless Network Adapter Selection..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Wireless Network Adapter Selection..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="menulist" position="50,95" size="710,375" zPosition="2" enableWrapAround="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="background" transparent="1" />
     <widget source="description" render="Label" position="45,615" size="720,26" zPosition="1" font="Regular; 18" halign="center" transparent="1" foregroundColor="color1" />
     <panel name="TemplatesMenu"/>
@@ -2272,7 +2276,7 @@
   <!-- Wlan Setup -->
   <screen name="WlanSetup" position="fill" title="Wireless Network Setup Menu..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Wireless Network Setup Menu..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="menulist" position="50,95" size="710,375" zPosition="2" enableWrapAround="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="description" render="Label" position="45,614" size="720,26" zPosition="1" font="Regular; 18" halign="center" transparent="1" foregroundColor="color1" />
     <panel name="TemplatesMenu"/>
@@ -2282,7 +2286,7 @@
   <!-- Wlan Config -->
   <screen name="WlanConfig" position="fill" title="Wireless Network Configuration..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Wireless Network Configuration..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="config" position="50,95" size="710,375" zPosition="2" enableWrapAround="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <eLabel text="IP Address : " position="60,500" size="150,30" font="Regular;20" backgroundColor="background" transparent="1" foregroundColor="color2" />
     <widget source="ipaddress" render="Label" position="400,500" halign="right" size="300,30" font="Regular;20" backgroundColor="background" transparent="1" />
@@ -2296,7 +2300,7 @@
   <!-- Wlan ScanAp -->
   <screen name="WlanScanAp" position="fill" title="Wireless Network AP Scan..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Wireless Network AP Scan..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget name="menulist" position="50,95" size="710,300" zPosition="2" enableWrapAround="1" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="Address" render="Label" position="60,420" size="600,30" font="Regular;20" backgroundColor="background" transparent="1" />
     <widget source="ESSID" render="Label" position="60,450" size="600,30" font="Regular;20" backgroundColor="background" transparent="1" />
@@ -2311,7 +2315,7 @@
   <!-- Wlan Status -->
   <screen name="Wlanstatus" position="fill" title="Wireless Network Status..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Wireless Network Status..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <widget source="status" render="Label" position="50,95" size="710,500" font="Regular;18" halign="left" backgroundColor="background" transparent="1" />
     <panel name="TemplatesMenu"/>
     <panel name="TemplatesClock"/>
@@ -2361,7 +2365,7 @@
   <!-- Plugin Browser -->
   <screen name="PluginBrowser" position="fill" title="Plugin browser" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Plugin browser" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle" />
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/plugins.png" alphatest="blend" />
     <widget name="list" position="50,90" size="710,550" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -2572,7 +2576,7 @@
   <!--  TimerEdit -->
   <screen name="TimerEdit" position="fill" title="Timer Edit" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Timer Edit" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/timer.png" alphatest="blend" />
     <widget name="description" position="50,95" size="710,40" font="Regular;25" transparent="1" />
     <widget name="lbegin" position="585,152" size="103,30" font="Regular;25" foregroundColor="background" transparent="1" />
@@ -2586,7 +2590,7 @@
   <!-- Timer Edit List -->
   <screen name="TimerEditList" position="fill" title="Timer Editor" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Timer Editor" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/timer.png" alphatest="blend" />
     <widget name="timerlist" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -2596,7 +2600,7 @@
   <!-- Timer Entry -->
   <screen name="TimerEntry" position="fill" title="Timer entry" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Timer entry" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/timer.png" alphatest="blend" />
     <widget name="config" position="50,95" size="710,350" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="canceltext" position="56,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
@@ -2608,7 +2612,7 @@
   <!-- Timer Log -->
   <screen name="TimerLog" position="fill" title="Timer log" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Timer log" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/timer.png" alphatest="blend" />
     <widget name="loglist" position="50,95" size="710,350" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="logentry" position="50,500" size="710,130" font="Regular;20" transparent="1" />
@@ -2619,7 +2623,7 @@
   <!-- Timer Sanity Conflict -->
   <screen name="TimerSanityConflict" position="fill" title="Timer sanity error" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Timer sanity error" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/timer.png" alphatest="blend" />
     <widget name="list" position="50,95" size="710,250" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="timer1" position="50,95" size="350,225" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" />
@@ -2631,7 +2635,7 @@
   <!-- Timer Selection -->
   <screen name="TimerSelection" position="fill" title="Timer selection" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Timer selection" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/timer.png" alphatest="blend" />
     <widget name="timerlist" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -2641,7 +2645,7 @@
   <!-- DVD Burn - Project Settings -->
   <screen name="ProjectSettings" position="fill" title="Collection settings" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Collection settings" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/dvd_player.png" alphatest="blend" />
     <widget name="config" position="50,95" size="710,276" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget source="info" render="Label" position="50,530" size="710,100" font="Regular;20" halign="center" valign="center" transparent="1" />
@@ -2652,7 +2656,7 @@
   <!-- DVD Burn - FileBrowser -->
   <screen name="FileBrowser_DVDPlayer" position="fill" title="DVD File Browser" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="DVD File Browser" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/dvd_player.png" alphatest="blend" />
     <widget name="filelist" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -2662,7 +2666,7 @@
   <!-- DVD Burn- DVD Toolbox -->
   <screen name="DVDToolbox" position="fill" title="DVD media toolbox" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="DVD media toolbox" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/dvd_player.png" alphatest="blend" />
     <widget source="info" render="Label" position="50,95" size="710,100" font="Regular;20" transparent="1" />
     <widget name="details" position="50,200" size="710,150" font="Regular;16" transparent="1" />
@@ -2675,7 +2679,7 @@
   <!-- DVD Burn-Title List -->
   <screen name="TitleList" position="fill" title="DVD Tool" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="DVD Tool" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/dvd_player.png" alphatest="blend" />
     <widget source="title_label" render="Label" position="222,461" size="540,38" font="Regular;18" transparent="1" />
     <widget source="error_label" render="Label" position="50,95" size="710,50" zPosition="3" font="Regular;20" transparent="1" />
@@ -2707,7 +2711,7 @@
   <!-- DVD Burn-TitleProperties -->
   <screen name="TitleProperties" position="fill" title="Properties of current title" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Properties of current title" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/dvd_player.png" alphatest="blend" />
     <widget source="serviceinfo" render="Label" position="50,95" size="710,144" font="Regular;18" transparent="1" />
     <widget name="thumbnail" position="580,490" size="180,144" alphatest="on" />
@@ -2719,7 +2723,7 @@
   <!-- DVD Burn-DVDMovieSelection -->
   <screen name="DVDMovieSelection" position="fill" title="Select a movie" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Select a movie" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="waitingtext" position="50,95" size="560,330" zPosition="4" font="Regular;22" halign="center" valign="center" />
     <widget name="list" position="50,95" size="710,330" zPosition="2" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="DescriptionBorder" pixmap="TechnoHD/border_eventinfo.png" position="45,535" zPosition="1" size="560,103" transparent="1" alphatest="on" />
@@ -2744,7 +2748,7 @@
   <!-- DVD  File Browser -->
   <screen name="FileBrowser" position="fill" title="DVD File Browser" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="DVD File Browser" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/dvd_player.png" alphatest="blend" />
     <widget name="filelist" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -2754,7 +2758,7 @@
   <!-- Picture Player -->
   <screen name="picshow" position="fill" title="PicturePlayer" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="PicturePlayer" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget source="label" render="Label" position="890,105" size="260,160" font="Regular;20" transparent="1" />
     <widget name="thn" position="890,280" size="260,300" alphatest="on" />
     <widget name="filelist" position="50,95" size="710,530" zPosition="3" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
@@ -2765,7 +2769,7 @@
   <screen name="Pic_Exif" position="fill" title="Info" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/picture_player.png" alphatest="blend" />
-    <eLabel text="Info" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget source="menu" render="Listbox" position="50,95" size="710,480" zPosition="3" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" selectionDisabled="1">
       <convert type="TemplatedMultiContent">
 		{"template": [ MultiContentEntryText(pos = (5, 7), size = (350, 30), flags = RT_HALIGN_LEFT, text = 0),
@@ -2793,7 +2797,7 @@
   <screen name="NimSetup" position="fill" title="Reception Settings" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
-    <eLabel text="Reception Settings" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="config" position="50,95" size="710,528" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <panel name="TemplatesClock" />
     <panel name="TemplatesButtons" />
@@ -2802,7 +2806,7 @@
   <screen name="NimSelection" position="fill" title="Choose Tuner" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
-    <eLabel text="Choose Tuner" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget source="nimlist" render="Listbox" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -2820,7 +2824,7 @@
   <!-- Positioner setup -->
   <screen name="PositionerSetup" position="fill" title="Positioner setup" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_8.png" />
-    <eLabel text="Positioner setup..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap pixmap="TechnoHD/menu/posizioner.png" position="950,200" zPosition="2" size="200,200" alphatest="on" />
     <widget name="list" position="50,95" size="710,210" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="snr_db" position="400,320" size="200,30" halign="center" valign="center" font="Regular; 26" backgroundColor="background" transparent="1" />
@@ -2847,7 +2851,7 @@
   <!-- Positioner setup 2-->
   <screen name="PositionerSetupMod" position="fill" title="Positioner setup" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_8.png" />
-    <eLabel text="Positioner setup..." position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap pixmap="TechnoHD/menu/posizioner.png" position="950,200" zPosition="2" size="200,200" alphatest="on" />
     <widget name="list" position="50,95" size="710,210" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="snr_db" position="400,320" size="200,30" halign="center" valign="center" font="Regular; 26" backgroundColor="background" transparent="1" />
@@ -2874,7 +2878,7 @@
   <!--  Tuner Screen -->
   <screen name="TunerScreen" position="fill" title="Tune" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Tune" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
     <widget name="config" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="introduction" render="Label" position="45,615" size="720,26" font="Regular; 18" foregroundColor="color1" backgroundColor="background" halign="center" transparent="1" />
@@ -2883,7 +2887,7 @@
   <!--  Positioner Setup Log -->
   <screen name="PositionerSetupLog" position="fill" title="Positioner Setup Log" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_8.png" />
-    <eLabel text="Positioner Setup Log" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="list" position="50,95" size="1180,535" font="Console;20" backgroundColor="black" transparent="1" />
     <widget name="key_red" render="Label" position="56,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
     <widget name="key_green" render="Label" position="355,663" size="270,40" font="Regular; 22" halign="center" valign="top" backgroundColor="background" transparent="1" zPosition="3" foregroundColor="white" borderWidth="1" />
@@ -2894,7 +2898,7 @@
   <!--  Satfinder -->
   <screen name="Satfinder" position="fill" title="Satfinder" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Satfinder" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
     <widget source="Frontend" render="Label" position="260,100" zPosition="2" size="280,30" font="Regular; 26" halign="center" valign="center" transparent="1">
       <convert type="FrontendInfo">SNRdB</convert>
@@ -2936,7 +2940,7 @@
   <!-- Scan Setup -->
   <screen name="ScanSetup" position="fill" title="Service scan" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Service scan" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
     <widget name="config" position="50,95" size="710,500" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
     <widget name="introduction" position="45,615" size="720,26" font="Regular; 18" foregroundColor="color1" backgroundColor="background" halign="center" transparent="1" />
@@ -2946,7 +2950,7 @@
   <!-- Scan Simple -->
   <screen name="ScanSimple" position="fill" title="Service scan" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_2.png" />
-    <eLabel text="Service scan" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
     <widget name="header" position="50,95" size="710,25" font="Regular;23" transparent="1" halign="center" />
     <widget name="config" position="50,125" size="710,421" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
@@ -2957,7 +2961,7 @@
   <!-- Scan Simple -->
   <screen name="SimpleSatScan" position="fill" title="Service scan" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Service scan" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
     <eLabel name="pos" text="Current position:" position="785,180" size="200,25" font="Regular; 21" halign="right" transparent="1" />
     <widget name="status" position="1000,180" size="240,25" font="Regular; 21" valign="center" transparent="1" foregroundColor="color4" />
@@ -3001,7 +3005,7 @@
   <!-- Service Scan  -->
   <screen name="ServiceScan" position="fill" title="Service scan" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Service scan" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
     <widget source="FrontendInfo" render="Pixmap" pixmap="TechnoHD/icons/scan-s.png" position="50,95" size="64,64" alphatest="on">
       <convert type="FrontendInfo">TYPE</convert>
@@ -3030,7 +3034,7 @@
   <!-- Simple Service Scan  -->
   <screen name="SimpleServiceScan" position="fill" title="Simple Service Scan" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Service scan" position="45,38" size="720,36" font="Regular; 30" halign="center" transparent="1" foregroundColor="color1" backgroundColor="background" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <ePixmap position="920,440" zPosition="1" size="200,200" pixmap="TechnoHD/menu/scan.png" alphatest="blend" />
     <widget source="FrontendInfo" render="Pixmap" pixmap="TechnoHD/icons/scan-s.png" position="50,95" size="64,64" alphatest="on">
       <convert type="FrontendInfo">TYPE</convert>
@@ -3195,7 +3199,7 @@
   <!-- Console  -->
   <screen name="Console" position="fill" title="Command execution..." flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_8.png" />
-    <eLabel text="Command execution..." position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="text" position="50,95" size="1180,535" font="Console;20" backgroundColor="black" transparent="1" />
     <panel name="TemplatesClock"/>
   </screen>
@@ -3267,7 +3271,7 @@
     <ePixmap pixmap="TechnoHD/buttons/button_red.png" position="50,330" zPosition="0" size="15,16" transparent="1" alphatest="on" />
     <widget name="languagetext" position="70,325" size="150,30" font="Regular;18" transparent="1" />
     <widget name="wizard" pixmap="TechnoHD/wizard.png" position="50,120" zPosition="10" size="140,188" alphatest="blend" />
-    <widget name="rc" pixmaps="TechnoHD/rc.png,TechnoHD/rcold.png" position="810,120" zPosition="10" size="154,500" alphatest="on" />
+    <widget name="rc" pixmaps="rc.png,rcold.png" position="810,120" zPosition="10" size="154,500" alphatest="on" />
   </screen>
   <!-- Hard disk Selection -->
   <screen name="HarddiskSelection" position="fill" title="Select HDD" flags="wfNoBorder">
@@ -3292,7 +3296,7 @@
   <!-- Hard disk Wait -->
   <screen name="HarddiskWait" position="fill" title="Harddisk" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Harddisk" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="wait" position="50,95" size="710,300" font="Regular;23"  transparent="1" />
     <panel name="TemplatesMenu"/>
     <panel name="TemplatesClock"/>
@@ -3300,9 +3304,9 @@
   <!-- HelpMenu -->
   <screen name="HelpMenu" position="fill" title="Menu" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_6.png" />
-    <eLabel text="Help..." position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="list" position="50,95" size="710,535" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" transparent="1" />
-    <widget name="rc" position="940,center" size="154,500" zPosition="10" pixmaps="TechnoHD/rc.png,TechnoHD/rcold.png" alphatest="on" />
+    <widget name="rc" position="940,center" size="154,500" zPosition="10" pixmaps="rc.png,rcold.png" alphatest="on" />
     <widget name="arrowdown" pixmap="TechnoHD/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" alphatest="on" />
     <widget name="arrowdown2" pixmap="TechnoHD/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" alphatest="on" />
     <widget name="arrowup" pixmap="TechnoHD/arrowup.png" position="-100,-100" size="37,70" zPosition="11" alphatest="on" />
@@ -3380,7 +3384,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
   <!-- Location Box -->
   <screen name="LocationBox" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Location Box" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="text" position="50,95" size="710,26" font="Regular;22" transparent="1" />
     <eLabel position="50,125" size="20,27" backgroundColor="grey" />
     <widget name="target" position="80,125" size="680,26" valign="center" font="Regular;24" foregroundColor="color2" backgroundColor="black" transparent="1" />
@@ -3395,7 +3399,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
   <!-- Input Box -->
   <screen name="InputBox" position="fill" title="Input" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Input" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="text" position="50,95" size="710,26" font="Regular; 22" transparent="1" />
     <widget name="input" position="50,130" size="710,26" font="Regular; 22" transparent="1" />
     <panel name="TemplatesMenu"/>
@@ -5400,9 +5404,9 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
   </screen>
   <!-- ########## vZapHistory ########## -->
   <!-- vZapHistory -->
-  <screen name="vZapHistory" position="fill" title="Zap History Browser" flags="wfNoBorder">
+  <screen name="vZapHistory" position="fill" flags="wfNoBorder">
     <ePixmap position="0,0" size="1280,720" zPosition="-1" pixmap="TechnoHD/style/greymenu_1.png" />
-    <eLabel text="Zap History Browser" position="45,38" size="720,36" font="Regular; 30" halign="center" foregroundColor="color1" backgroundColor="background" transparent="1" borderWidth="2" />
+    <panel name="TemplatesTitle"/>
     <widget name="list" position="50,95" size="710,540" scrollbarMode="showNever" selectionPixmap="TechnoHD/style/greysel.png" backgroundColor="black" itemHeight="44" transparent="1" />
     <panel name="TemplatesMenu" />
     <panel name="TemplatesClock" />
